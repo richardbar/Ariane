@@ -35,9 +35,9 @@ namespace Ariane
         static void Main()
         {
             System.Drawing.Rectangle screenSize = Screen.PrimaryScreen.Bounds;
-            if (screenSize.Width < 1920 || screenSize.Height < 1080)
+            if (screenSize.Width < 1300 || screenSize.Height < 900)
             {
-                MessageBox.Show("Your screen size is smaller that the minimum of 1080p.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Your screen size is smaller that the minimum of (1300px)x(900px).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Environment.Exit(-1);
             }
 

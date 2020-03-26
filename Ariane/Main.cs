@@ -35,6 +35,8 @@ namespace Ariane
 {
     public partial class Main : Form
     {
+        private bool isDark = true;
+
         private Selections selections = new Selections();
 
         public Main()
@@ -66,7 +68,7 @@ namespace Ariane
             {
                 Title = "Select text file to open",
                 Filter = "Text files (*.txt)|*.txt|All files (Will load as plain text file) (*.*)|*.*",
-                CheckPathExists = true
+                CheckFileExists = false
             };
             fileDialog.ShowDialog();
             if (fileDialog.FileName == "") return;
@@ -111,10 +113,35 @@ namespace Ariane
             replace("place", Color.Aqua);
         }
 
+        private void eventBtn_Click(object sender, EventArgs e)
+        {
+            if (rText.Text != "")
+                text.Text = text.Text.Replace(rText.Text, $"<event>{rText.Text}</event>");
+            replace("event", Color.Red);
+        }
+
         private void clearBtn_Click(object sender, EventArgs e)
         {
             text.Clear();
             selections.selections.Clear();
+        }
+
+        private void ThemeBtn_Click(object sender, EventArgs e)
+        {
+            if (isDark)
+            {
+                this.BackColor = Color.White;
+                this.personBtn.BackColor = this.placeBtn.BackColor = this.eventBtn.BackColor = this.ThemeBtn.BackColor = this.clearBtn.BackColor = this.saveEncBtn.BackColor = this.saveBtn.BackColor = this.loadBtn.BackColor = Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(00)))), ((int)(((byte)(238)))));
+                this.rText.BackColor = this.text.BackColor = Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+                this.rText.ForeColor = this.text.ForeColor = Color.Black;
+            }
+            else
+            {
+                this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
+                this.rText.BackColor = this.text.BackColor = this.personBtn.BackColor = this.placeBtn.BackColor = this.eventBtn.BackColor = this.ThemeBtn.BackColor = this.clearBtn.BackColor = this.saveEncBtn.BackColor = this.saveBtn.BackColor = this.loadBtn.BackColor = Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+                this.rText.ForeColor = this.text.ForeColor = Color.White;
+            }
+            isDark = !isDark;
         }
     }
 }

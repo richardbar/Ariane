@@ -53,11 +53,11 @@ namespace Ariane
             this.rText = new System.Windows.Forms.TextBox();
             this.personBtn = new System.Windows.Forms.Button();
             this.placeBtn = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.eventBtn = new System.Windows.Forms.Button();
             this.exitBtn = new System.Windows.Forms.Button();
             this.maximizeBtn = new System.Windows.Forms.Button();
             this.minimizeBtn = new System.Windows.Forms.Button();
-            this.lightThemeBtn = new System.Windows.Forms.Button();
+            this.ThemeBtn = new System.Windows.Forms.Button();
             this.clearBtn = new System.Windows.Forms.Button();
             this.saveEncBtn = new System.Windows.Forms.Button();
             this.saveBtn = new System.Windows.Forms.Button();
@@ -118,19 +118,20 @@ namespace Ariane
             this.placeBtn.UseVisualStyleBackColor = false;
             this.placeBtn.Click += new System.EventHandler(this.placeBtn_Click);
             // 
-            // button3
+            // eventBtn
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(1050, 760);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(138, 28);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = false;
+            this.eventBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.eventBtn.FlatAppearance.BorderSize = 0;
+            this.eventBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eventBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eventBtn.ForeColor = System.Drawing.Color.White;
+            this.eventBtn.Location = new System.Drawing.Point(1050, 760);
+            this.eventBtn.Name = "eventBtn";
+            this.eventBtn.Size = new System.Drawing.Size(138, 28);
+            this.eventBtn.TabIndex = 4;
+            this.eventBtn.Text = "Event";
+            this.eventBtn.UseVisualStyleBackColor = false;
+            this.eventBtn.Click += new System.EventHandler(this.eventBtn_Click);
             // 
             // exitBtn
             // 
@@ -174,17 +175,18 @@ namespace Ariane
             // 
             // lightThemeBtn
             // 
-            this.lightThemeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.lightThemeBtn.FlatAppearance.BorderSize = 0;
-            this.lightThemeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lightThemeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lightThemeBtn.ForeColor = System.Drawing.Color.White;
-            this.lightThemeBtn.Location = new System.Drawing.Point(760, 256);
-            this.lightThemeBtn.Name = "lightThemeBtn";
-            this.lightThemeBtn.Size = new System.Drawing.Size(428, 50);
-            this.lightThemeBtn.TabIndex = 16;
-            this.lightThemeBtn.Text = "Light Theme";
-            this.lightThemeBtn.UseVisualStyleBackColor = false;
+            this.ThemeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.ThemeBtn.FlatAppearance.BorderSize = 0;
+            this.ThemeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ThemeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThemeBtn.ForeColor = System.Drawing.Color.White;
+            this.ThemeBtn.Location = new System.Drawing.Point(760, 256);
+            this.ThemeBtn.Name = "lightThemeBtn";
+            this.ThemeBtn.Size = new System.Drawing.Size(428, 50);
+            this.ThemeBtn.TabIndex = 16;
+            this.ThemeBtn.Text = "Change Theme";
+            this.ThemeBtn.UseVisualStyleBackColor = false;
+            this.ThemeBtn.Click += new System.EventHandler(this.ThemeBtn_Click);
             // 
             // clearBtn
             // 
@@ -255,11 +257,11 @@ namespace Ariane
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.saveEncBtn);
             this.Controls.Add(this.clearBtn);
-            this.Controls.Add(this.lightThemeBtn);
+            this.Controls.Add(this.ThemeBtn);
             this.Controls.Add(this.minimizeBtn);
             this.Controls.Add(this.maximizeBtn);
             this.Controls.Add(this.exitBtn);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.eventBtn);
             this.Controls.Add(this.placeBtn);
             this.Controls.Add(this.personBtn);
             this.Controls.Add(this.rText);
@@ -282,11 +284,11 @@ namespace Ariane
         private System.Windows.Forms.TextBox rText;
         private System.Windows.Forms.Button personBtn;
         private System.Windows.Forms.Button placeBtn;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button eventBtn;
         private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.Button maximizeBtn;
         private System.Windows.Forms.Button minimizeBtn;
-        private System.Windows.Forms.Button lightThemeBtn;
+        private System.Windows.Forms.Button ThemeBtn;
         private System.Windows.Forms.Button clearBtn;
         private System.Windows.Forms.Button saveEncBtn;
         private System.Windows.Forms.Button saveBtn;
