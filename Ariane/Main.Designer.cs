@@ -101,7 +101,7 @@ namespace Ariane
             this.personBtn.TabIndex = 2;
             this.personBtn.Text = "Person";
             this.personBtn.UseVisualStyleBackColor = false;
-            this.personBtn.Click += new System.EventHandler(this.personBtn_Click);
+            this.personBtn.Click += new System.EventHandler(this.PersonBtn_Click);
             // 
             // placeBtn
             // 
@@ -116,7 +116,7 @@ namespace Ariane
             this.placeBtn.TabIndex = 3;
             this.placeBtn.Text = "Place";
             this.placeBtn.UseVisualStyleBackColor = false;
-            this.placeBtn.Click += new System.EventHandler(this.placeBtn_Click);
+            this.placeBtn.Click += new System.EventHandler(this.PlaceBtn_Click);
             // 
             // eventBtn
             // 
@@ -131,7 +131,7 @@ namespace Ariane
             this.eventBtn.TabIndex = 4;
             this.eventBtn.Text = "Event";
             this.eventBtn.UseVisualStyleBackColor = false;
-            this.eventBtn.Click += new System.EventHandler(this.eventBtn_Click);
+            this.eventBtn.Click += new System.EventHandler(this.EventBtn_Click);
             // 
             // exitBtn
             // 
@@ -144,7 +144,7 @@ namespace Ariane
             this.exitBtn.TabIndex = 5;
             this.exitBtn.Text = "X";
             this.exitBtn.UseVisualStyleBackColor = false;
-            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
+            this.exitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
             // maximizeBtn
             // 
@@ -162,7 +162,7 @@ namespace Ariane
             // minimizeBtn
             // 
             this.minimizeBtn.BackColor = System.Drawing.Color.Yellow;
-            this.minimizeBtn.Enabled = false;
+            this.minimizeBtn.Enabled = true;
             this.minimizeBtn.FlatAppearance.BorderSize = 0;
             this.minimizeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minimizeBtn.Location = new System.Drawing.Point(1131, 0);
@@ -173,7 +173,7 @@ namespace Ariane
             this.minimizeBtn.UseVisualStyleBackColor = false;
             this.minimizeBtn.Click += new System.EventHandler(this.minimizeBtn_Click);
             // 
-            // lightThemeBtn
+            // ThemeBtn
             // 
             this.ThemeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.ThemeBtn.FlatAppearance.BorderSize = 0;
@@ -181,7 +181,7 @@ namespace Ariane
             this.ThemeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ThemeBtn.ForeColor = System.Drawing.Color.White;
             this.ThemeBtn.Location = new System.Drawing.Point(760, 256);
-            this.ThemeBtn.Name = "lightThemeBtn";
+            this.ThemeBtn.Name = "ThemeBtn";
             this.ThemeBtn.Size = new System.Drawing.Size(428, 50);
             this.ThemeBtn.TabIndex = 16;
             this.ThemeBtn.Text = "Change Theme";
@@ -201,7 +201,7 @@ namespace Ariane
             this.clearBtn.TabIndex = 17;
             this.clearBtn.Text = "Clear";
             this.clearBtn.UseVisualStyleBackColor = false;
-            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
+            this.clearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
             // 
             // saveEncBtn
             // 
@@ -230,7 +230,7 @@ namespace Ariane
             this.saveBtn.TabIndex = 19;
             this.saveBtn.Text = "Save To";
             this.saveBtn.UseVisualStyleBackColor = false;
-            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            this.saveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // loadBtn
             // 
@@ -245,7 +245,7 @@ namespace Ariane
             this.loadBtn.TabIndex = 20;
             this.loadBtn.Text = "Load From";
             this.loadBtn.UseVisualStyleBackColor = false;
-            this.loadBtn.Click += new System.EventHandler(this.loadBtn_Click);
+            this.loadBtn.Click += new System.EventHandler(this.LoadBtn_Click);
             // 
             // Main
             // 

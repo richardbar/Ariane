@@ -37,18 +37,18 @@ namespace Ariane
     {
         private bool isDark = true;
 
-        private Selections selections = new Selections();
+        private readonly Selections selections = new Selections();
 
         public Main()
         {
             InitializeComponent();
         }
 
-        private void exitBtn_Click(object sender, EventArgs e) => this.Dispose();
+        private void ExitBtn_Click(object sender, EventArgs e) => this.Dispose();
 
-        private void minimizeBtn_Click(object sender, EventArgs e) => this.WindowState = FormWindowState.Minimized;
+        private void minimizeBtn_Click(object sender, EventArgs e) => WindowState = FormWindowState.Minimized;
 
-        private void loadBtn_Click(object sender, EventArgs e)
+        private void LoadBtn_Click(object sender, EventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog
             {
@@ -62,7 +62,7 @@ namespace Ariane
             text.Text = File.ReadAllText(fileDialog.FileName);
         }
 
-        private void saveBtn_Click(object sender, EventArgs e)
+        private void SaveBtn_Click(object sender, EventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog
             {
@@ -75,15 +75,22 @@ namespace Ariane
             File.WriteAllText(fileDialog.FileName, text.Text + "\n" + JsonConvert.SerializeObject(selections.selections));
         }
 
-        private void replace(string type, Color color)
+        private void Replace(string type, Color color)
         {
+            int from = 0, to = 0;
+
             if (text.SelectionLength != 0)
             {
+                to = text.SelectionStart + text.SelectionLength;
+                from = text.SelectionStart;
+                text.Text = text.Text.Substring(0, from) + $"<{type}>" + text.Text.Substring(from, to - from) + $"</{type}>" + text.Text.Substring(to);
+                text.SelectionStart = from + type.Length + 2;
+                text.SelectionLength = to - from;
                 text.SelectionColor = color;
                 selections.selections.Add(new TripleData() { from = text.SelectionStart, to = text.SelectionStart + text.SelectionLength, type = type });
             }
-                if (rText.Text == "") return;
-            int from = 0, to = 0;
+            
+            if (rText.Text == "") return;
             while (true)
             {
                 from = text.Text.IndexOf(rText.Text, to);
@@ -99,28 +106,28 @@ namespace Ariane
             return;
         }
 
-        private void personBtn_Click(object sender, EventArgs e)
+        private void PersonBtn_Click(object sender, EventArgs e)
         {
             if (rText.Text != "")
                 text.Text = text.Text.Replace(rText.Text, $"<person>{rText.Text}</person>");
-            replace("person", Color.BlueViolet);
+            Replace("person", Color.BlueViolet);
         }
 
-        private void placeBtn_Click(object sender, EventArgs e)
+        private void PlaceBtn_Click(object sender, EventArgs e)
         {
             if (rText.Text != "")
                 text.Text = text.Text.Replace(rText.Text, $"<place>{rText.Text}</place>");
-            replace("place", Color.Aqua);
+            Replace("place", Color.Aqua);
         }
 
-        private void eventBtn_Click(object sender, EventArgs e)
+        private void EventBtn_Click(object sender, EventArgs e)
         {
             if (rText.Text != "")
                 text.Text = text.Text.Replace(rText.Text, $"<event>{rText.Text}</event>");
-            replace("event", Color.Red);
+            Replace("event", Color.Red);
         }
 
-        private void clearBtn_Click(object sender, EventArgs e)
+        private void ClearBtn_Click(object sender, EventArgs e)
         {
             text.Clear();
             selections.selections.Clear();
