@@ -89,7 +89,7 @@ namespace Ariane
                 text.SelectionColor = color;
                 selections.selections.Add(new TripleData() { from = text.SelectionStart, to = text.SelectionStart + text.SelectionLength, type = type });
             }
-            
+
             if (rText.Text == "") return;
             while (true)
             {
